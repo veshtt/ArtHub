@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtHub - Feed de Publicações</title>
+    <link rel="icon" type="image/x-icon" href="img primeira/iccon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .banner {
+            position: relative;
+            text-align: center;
+            height: 200px; /* Reduzindo a altura do banner */
+            background: url('img primeira/design-a-logo-for-arthub-a-dynamic-social-platform-YAGPxJLkR3uRtiq1Wvw8jQ-smKJB2sbT46jzTn_3x396A.jpeg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            margin: 0; /* Removendo qualquer margem adicional */
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura */
+            z-index: 1;
+        }
+
+        .banner__title {
+            position: relative;
+            z-index: 2;
+            margin: 0; /* Removendo qualquer margem adicional */
+            line-height: 200px; /* Alinhando o texto verticalmente */
+        }
+
+        .sections-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .jobs, .events, .tutorials {
+            background-color: #f9f9f9;
+            width: 32%; /* Ajuste para três seções lado a lado */
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .filters select {
+            margin-right: 10px;
+            padding: 5px;
+        }
+
+        .job-list, .event-list, .tutorial-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .job-card, .event-card, .tutorial-card {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        footer {
+            background-color: #1E3D58; /* Azul escuro */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+
+        .footer-links, .social-media, .contact-info, .privacy-policy {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a, .social-media a, .privacy-policy a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .sections-container {
+                flex-direction: column;
+            }
+            .jobs, .events, .tutorials {
+                width: 100%;
+                margin-top: 20px;
+            }
+        }
+
+        /* Estilos para o Feed */
+        .feed-container {
+            max-height: calc(100vh - 200px); /* Ajuste a altura conforme necessário */
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .feed {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px; /* Ajuste a largura conforme necessário */
+            margin: 0 auto;
+        }
+
+        .feed-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: calc(20% - 20px); /* Ajuste para 5 itens por linha */
+            margin: 10px;
+            text-align: center;
+        }
+
+        .feed-item img {
+            width: 100%;
+            height: 200px; /* Ajuste a altura conforme necessário */
+            object-fit: cover; /* Isso garante que a imagem se ajuste ao contêiner sem distorcer */
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+
+        .feed-item h3 {
+            color: #333;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .feed-item p {
+            color: #666;
+            font-size: 1em;
+            margin: 10px;
+        }
+
+        .feed-item a {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .feed-item {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img primeira/LOGO2.png" alt="ArtHub Logo">
+            </a>
+        </div>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html">Home</a></li>
+                <li class="nav__item"><a href="feed-de-publicações.html">Feed de Publicações</a></li>
+                <li class="nav__item"><a href="oportunidades.html">Oportunidades</a></li>
+                <li class="nav__item"><a href="eventos.html">Eventos</a></li>
+                <li class="nav__item"><a href="tutoriais.html">Tutoriais</a></li>
+                <li class="nav__item"><a href="contato.html">Contato</a></li>
+                <li class="nav__item"><a href="sobre-nos.html">Sobre Nós</a></li>
+            </ul>
+        </nav>
+        <div class="social-media-top">
+            <a href="#" class="social-media__link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-media__link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-media__link"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="search-bar">
+            <form action="search.html" method="get">
+                <input type="text" name="q" placeholder="Buscar...">
+                <button type="submit">Pesquisar</button>
+            </form>
+        </div>
+    </header>
+
+
+    <!-- Banner Principal -->
+    <section class="banner">
+        <h1 class="banner__title">Feed de Publicações</h1>
+    </section>
+
+    <!-- Feed Container with Scrollbar -->
+    <div class="feed-container">
+        <section class="feed">
+            <!-- Primeira Fileira -->
+            <div class="feed-item">
+                <img src="img primeira/evento 1.jpg" alt="Exposição de Arte">
+                <h3>Exposição de Arte</h3>
+                <p>Confira as últimas exposições de arte em nossa galeria.</p>
+                <a href="#">Ver Mais</a>
+            </div>
+            <div class="feed-item">
+                <img src="img primeira/evento 2.jpg" alt="Workshop de Escultura">
+                <h3>Workshop de Escultura</h3>
+                <p>Aprenda técnicas de escultura com nossos especialistas.</p>
+                <a href="#">Ver Mais</a>
+            </div>
+            <div class="feed-item">
+                <img src="img primeira/evento 3.jpg" alt="Curso de Desenho">
+                <h3>Curso de Desenho</h3>
+                <p>Melhore suas habilidades em desenho com nossos cursos.</p>
+                <a href="#">Ver Mais</a>
+            </div>
+            <div class="feed-item">
+                <img src="img primeira/evento 1.jpg" alt="Palestra de Fotografia">
+                <h3>Palestra de Fotografia</h3>
+                <p>Participa da nossa palestra com fotógrafos renomados.</p>
+                <a href="#">Ver Mais</a>
+            </div>
+            <div class="feed-item">
+                <img src="img primeira/evento 2.jpg" alt="Concerto de Música">
+                <h3>Concerto de Música</h3>
+                <p>Desfrute de um concerto de música clássica no teatro municipal.</p>
+                <a href="#">Ver Mais</a>
+            </div>
+            <!-- Segunda Fileira -->
+            <div class="feed-item">
+                <img src="img primeira/evento 3.jpg" alt="Nova Exposição">
+                <h3>Nova Exposição</h3>
+                <p>Não perca a nova exposição que começa este mês.</p>
+                <a href="#">Ver Mais</a>
+            </div>
+            <div class="feed-item">
+                <img src="img primeira/evento 1.jpg" alt="Aula de Pintura">
+                <h3>Aula de Pintura</h3>
+                <p>Inscreva-se na nossa aula de pintura ao ar livre.</p>
+                <a href="#">Ver Mais</a>
+            </div>
+            <div class="feed-item">
+                <img src="img primeira/evento 2.jpg" alt="Workshop de Cerâmica">
+                <h3>Workshop de Cerâmica</h3>
+                <p>Participe do nosso workshop de cerâmica com artistas locais.</p>
+                <a href="#">Ver Mais</a>
+            </div>
+            <div class="feed-item">
+                <img src="img primeira/evento 3.jpg" alt="Sessão de Poesia">
+                <h3>Sessão de Poesia</h3>
+                <p>Venha assistir às nossas sessões de poesia ao vivo.</p>
+                <a href="#">Ver Mais</a>
+            </div>
+            <div class="feed-item">
+                <img src="img primeira/evento 1.jpg" alt="Curso de Fotografia">
+                <h3>Curso de Fotografia</h3>
+                <p>Aprenda técnicas avançadas de fotografia com nossos cursos.</p>
+                <a href="#">Ver Mais</a>
+            </div>
+            <!-- Terceira Fileira -->
+            <div class="feed-item">
+                <img src="img primeira/evento 2.jpg" alt="Exposição de Esculturas">
+                <h3>Exposição de Esculturas</h3>
+                <p>Confira as novas esculturas expostas em nossa galeria.</p>
+                <a href="#">Ver Mais</a>
+            </div>
+            <div class="feed-item">
+                <img src="img primeira/evento 3.jpg" alt="Aula de Teatro">
+                <h3>Aula de Teatro</h3>
+                <p>Participe das nossas aulas de teatro e desenvolva suas habilidades.</p>
+                <a href="#">Ver Mais</a>
+            </div>
+            <div class="feed-item">
+                <img src="img primeira/evento 1.jpg" alt="Palestra de Arte Moderna">
+                <h3>Palestra de Arte Moderna</h3>
+                <p>Assista à palestra sobre arte moderna com especialistas.</p>
+                <a href="#">Ver Mais</a>
+            </div>
+            <div class="feed-item">
+                <img src="img primeira/evento 2.jpg" alt="Oficina de Artesanato">
+                <h3>Oficina de Artesanato</h3>
+                <p>Participe da nossa oficina de artesanato e aprenda novas técnicas.</p>
+                <a href="#">Ver Mais</a>
+            </div>
+            <div class="feed-item">
+                <img src="img primeira/evento 3.jpg" alt="Mostra de Cinema">
+                <h3>Mostra de Cinema</h3>
+                <p>Assista aos filmes selecionados na nossa mostra de cinema.</p>
+                <a href="#">Ver Mais</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Espaço livre para publicações futuras -->
+    <div class="publications">
+        <!-- Conteúdos futuros podem ser adicionados aqui -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="feed-de-publicações.html" class="footer-link">Feed de Publicações</a>
+            <a href="eventos.html" class="footer-link">Eventos</a>
+            <a href="tutoriais.html" class="footer-link">Tutoriais</a>
+            <a href="contato.html" class="footer-link">Contato</a>
+            <a href="sobre-nos.html" class="footer-link">Sobre Nós</a>
+        </div>
+        <div class="social-media">
+            <a href="#" class="social-media__link"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#" class="social-media__link"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="#" class="social-media__link"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+        <div class="contact-info">
+            <p class="contact-info__item">Email: contato@arthub.com</p>
+            <p class="contact-info__item">Telefone: (81) 1234-5678</p>
+        </div>
+    </footer>
+</body>
+</html>

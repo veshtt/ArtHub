@@ -1,0 +1,97 @@
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card-list {
+    width: 48%;
+    text-align: center; /* Centraliza o texto dentro do container */
+}
+
+.card2 {
+    display: flex;
+    flex-direction: row;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card2 img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-content2 {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title2 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+}
+
+.card-description2 {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #666;
+}
+
+.card-button2 {
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 1em;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.card-button2:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo do botão flutuante */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #FF6F61;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    width: 10%;
+    height: 10%;
+}
+
+.floating-button:hover {
+    background-color: #dd564a;
+}
+.card-content2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-values {
+color: red;   /* Estilos para os valores */
+}
+

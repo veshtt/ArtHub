@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtHub - Formulário</title>
+    <link rel="icon" type="image/x-icon" href="img primeira/iccon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .banner {
+            position: relative;
+            text-align: center;
+            height: 200px; /* Reduzindo a altura do banner */
+            background: url('img primeira/design-a-logo-for-arthub-a-dynamic-social-platform-YAGPxJLkR3uRtiq1Wvw8jQ-smKJB2sbT46jzTn_3x396A.jpeg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            margin: 0; /* Removendo qualquer margem adicional */
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura */
+            z-index: 1;
+        }
+
+        .banner__title {
+            position: relative;
+            z-index: 2;
+            margin: 0; /* Removendo qualquer margem adicional */
+            line-height: 200px; /* Alinhando o texto verticalmente */
+        }
+
+        footer {
+            background-color: #1E3D58; /* Azul escuro */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto; /* Empurra o rodapé para o final da página */
+        }
+
+        .footer-links, .social-media, .contact-info, .privacy-policy {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a, .social-media a, .privacy-policy a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .social-media-top {
+            margin-right: 20px;
+        }
+
+        .social-media-top a {
+            color: #1E3D58;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .form-container {
+            display: none;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 200px;
+            padding: 20px;
+        }
+
+        .form-box {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 60%;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .form-title-contratante {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: center;
+            color: #007BFF;
+        }
+
+        .form-title-artista {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            font-weight: bold;
+            text-align: center;
+            color: #dc3545;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 97%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .form-group button {
+            padding: 10px 15px;
+            font-size: 1em;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+
+        .form-group #sexo {
+            width: 15%;
+        }
+
+        .form-group #data-nascimento {
+            width: 15%;
+        }
+
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .buttons-container button {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin: 0 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .buttons-container button:first-child {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .buttons-container button:first-child:hover {
+            background-color: #218838;
+        }
+
+        .buttons-container button:last-child {
+            background-color: #ffc107;
+            color: white;
+        }
+
+        .buttons-container button:last-child:hover {
+            background-color: #e0a800;
+        }
+    </style>
+    <script>
+        function toggleForm(formId) {
+            var artistForm = document.getElementById('artist-form');
+            var contractorForm = document.getElementById('contractor-form');
+
+            if (formId === 'artist-form') {
+                artistForm.style.display = 'flex';
+                contractorForm.style.display = 'none';
+            } else {
+                artistForm.style.display = 'none';
+                contractorForm.style.display = 'flex';
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html"> <!-- Link para a página inicial -->
+                <img src="img primeira/LOGO2.png" alt="ArtHub Logo">
+            </a>
+        </div>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html">Home</a></li>
+                <li class="nav__item"><a href="feed-de-publicações.html">Feed de Publicações</a></li>
+                <li class="nav__item"><a href="oportunidades.html">Oportunidades</a></li>
+                <li class="nav__item"><a href="eventos.html">Eventos</a></li>
+                <li class="nav__item"><a href="tutoriais.html">Tutoriais</a></li>
+                <li class="nav__item"><a href="contato.html">Contato</a></li>
+                <li class="nav__item"><a href="sobre-nos.html">Sobre Nós</a></li>
+            </ul>
+        </nav>
+        <div class="social-media-top">
+            <a href="#" class="social-media__link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-media__link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-media__link"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="search-bar">
+            <form action="search.html" method="get">
+                <input type="text" name="q" placeholder="Buscar...">
+                <button type="submit">Pesquisar</button>
+            </form>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="banner">
+        <h1 class="banner__title">Formulário de Oportunidades</h1>
+    </section>
+
+    <!-- Botões para escolher o formulário -->
+    <section class="buttons-container">
+        <button onclick="toggleForm('artist-form')">Eu sou um Artista</button>
+        <button onclick="toggleForm('contractor-form')">Procuro um Artista</button>
+    </section>
+
+    <!-- Formulários -->
+    <section class="form-container" id="artist-form">
+        <!-- Formulário 1 -->   
+        <div class="form-box artista">
+            <h2 class="form-title-artista">Eu sou um Artista</h2>
+            <form action="https://formsubmit.co/arrthubb@gmail.com" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Novo Cadastro de Artista">
+                <div class="form-group">
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" name="email" placeholder="Email" required>
+                    <input type="hidden" name="_autoresponse" value="Parabens pelo cadastro, só é permitido o cadastro de uma conta por vez, caso deseje criar uma nova conta favor excluir a anterior e tentar novamente">
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha: </label>
+                    <input type="password" id="senha" name="senha" placeholder="Senha" required>
+                </div>
+                <div class="form-group">
+                    <label for="nome">Nome Completo: </label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="sexo">Sexo: </label>
+                    <select id="sexo" name="sexo" required>
+                        <option value="M">Masculino</option>
+                        <option value="F">Feminino</option>
+                        <option value="O">Outro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="data-nascimento">Data de Nascimento: </label>
+                    <input type="date" id="data-nascimento" name="data-nascimento" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone: </label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="Telefone" required>
+                </div>
+                <div class="form-group">
+                    <label for="formacao">Formação: </label>
+                    <input type="text" id="formacao" name="formacao" placeholder="Formação" required>
+                </div>
+                <div class="form-group">
+                    <label for="foto-perfil">Foto de Perfil: </label>
+                    <input type="file" id="foto-perfil" name="foto-perfil" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="portifolio">Portfólio: </label>
+                    <textarea id="portifolio" name="portifolio" placeholder="Descreva seu portfólio" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="form-container" id="contractor-form">
+        <!-- Formulário 2 -->
+        <div class="form-box contratante">
+            <h2 class="form-title-contratante">Procuro um Artista</h2>
+            <form action="https://formsubmit.co/arrthubb@gmail.com" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Novo Cadastro de Contratante">
+                <div class="form-group">
+                    <label for="email-contratante">Email: </label>
+                    <input type="email" id="email-contratante" name="email-contratante" placeholder="Email" required>
+                    <input type="hidden" name="_autoresponse" value="Parabens pelo cadastro, só é permitido o cadastro de uma conta por vez, caso deseje criar uma nova conta favor excluir a anterior e tentar novamente">
+                </div>
+                <div class="form-group">
+                    <label for="senha-contratante">Senha: </label>
+                    <input type="password" id="senha-contratante" name="senha-contratante" placeholder="Senha" required>
+                </div>
+                <div class="form-group">
+                    <label for="nome-contratante">Nome Completo: </label>
+                    <input type="text" id="nome-contratante" name="nome-contratante" placeholder="Nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="sexo-contratante">Sexo: </label>
+                    <select id="sexo-contratante" name="sexo-contratante" required>
+                        <option value="M">Masculino</option>
+                        <option value="F">Feminino</option>
+                        <option value="O">Outro</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="data-nascimento-contratante">Data de Nascimento: </label>
+                    <input type="date" id="data-nascimento-contratante" name="data-nascimento-contratante" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefone-contratante">Telefone: </label>
+                    <input type="tel" id="telefone-contratante" name="telefone-contratante" placeholder="Telefone" required>
+                </div>
+                <div class="form-group">
+                    <label for="foto-perfil-contratante">Foto de Perfil: </label>
+                    <input type="file" id="foto-perfil-contratante" name="foto-perfil-contratante" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="experiencia">Experiência: </label>
+                    <textarea id="experiencia" name="experiencia" placeholder="Descreva sua experiência" required></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">Sobre</a>
+            <a href="#">Serviços</a>
+            <a href="#">Contato</a>
+        </div>
+        <div class="social-media">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="contact-info">
+            <p>Telefone: (11) 1234-5678</p>
+            <p>Email: contato@exemplo.com</p>
+        </div>
+        <div class="privacy-policy">
+            <a href="#">Política de Privacidade</a>
+        </div>
+    </footer>
+</body>
+</html>

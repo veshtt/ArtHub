@@ -1,0 +1,476 @@
+/* Estilos gerais para o corpo da página */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do cabeçalho */
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #1E3D58;
+    color: #fff;
+}
+
+/* Estilo da logo */
+.logo img {
+    height: 100px;
+    width: auto;
+    margin: 0 20px;
+}
+
+/* Estilo da lista de navegação */
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 0 20px;
+}
+
+/* Estilo dos links da navegação */
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Estilo da barra de pesquisa */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin: 10px 20px;
+}
+
+/* Estilo do campo de entrada da barra de pesquisa */
+.search-bar input {
+    padding: 5px;
+}
+
+/* Estilo do botão da barra de pesquisa */
+.search-bar button {
+    padding: 5px 10px;
+    border: 2px solid #ee6f4e;
+    border-radius: 5px;
+    background-color: #1E3D58;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo do botão da barra de pesquisa ao passar o mouse */
+.search-bar button:hover {
+    background-color: #ee6f4e;
+    color: #1E3D58;
+}
+
+/* Estilo do banner */
+.banner {
+    position: relative;
+    text-align: center;
+    height: 200px;
+    background: url('img primeira/design-a-logo-for-arthub-a-dynamic-social-platform-YAGPxJLkR3uRtiq1Wvw8jQ-smKJB2sbT46jzTn_3x396A.jpeg') no-repeat center center;
+    background-size: cover;
+    color: #fff;
+    margin: 0;
+}
+
+/* Sobreposição escura no banner */
+.banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Estilo do título do banner */
+.banner__title {
+    position: relative;
+    z-index: 2;
+    margin: 0;
+    line-height: 200px;
+}
+
+/* Contêiner das seções principais */
+.sections-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* Estilo das seções de jobs, events, e tutorials */
+.jobs, .events, .tutorials {
+    background-color: #f9f9f9;
+    width: 32%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Estilo do título das seções */
+.section-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Estilo dos filtros */
+.filters select {
+    margin-right: 10px;
+    padding: 5px;
+}
+
+/* Contêiner das listas de jobs, events, e tutorials */
+.job-list, .event-list, .tutorial-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Estilo dos cards de job, event, e tutorial */
+.job-card, .event-card, .tutorial-card {
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+/* Estilo do contêiner da newsletter */
+.newsletter {
+    text-align: center;
+    background-color: #FFCB47;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+/* Estilo do campo de entrada da newsletter */
+.newsletter input {
+    padding: 10px;
+    margin-right: 10px;
+}
+
+/* Estilo do botão da newsletter */
+.newsletter button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #FF6F61;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Estilo do rodapé */
+footer {
+    background-color: #1E3D58;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Estilo dos links e informações do rodapé */
+.footer-links, .social-media, .contact-info, .privacy-policy {
+    margin-bottom: 10px;
+}
+
+/* Estilo dos links clicáveis do rodapé */
+.footer-links a, .privacy-policy a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+/* Estilo dos links clicáveis do rodapé ao passar o mouse */
+.footer-links a:hover, .privacy-policy a:hover {
+    color: #ee6f4e;
+}
+
+/* Estilo da seção de redes sociais no rodapé */
+.social-media {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+/* Estilo dos links de redes sociais */
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 1em;
+}
+
+/* Estilo dos textos de contato no rodapé */
+.contact-info p {
+    margin: 5px 0;
+}
+
+/* Estilo responsivo para telas menores */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .logo img {
+        margin-left: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .search-bar {
+        margin-right: 0;
+    }
+
+    .sections-container {
+        flex-direction: column;
+    }
+
+    .jobs, .events, .tutorials {
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    .section-title, .about-us p {
+        margin: 0 20px;
+    }
+}
+
+/* Estilo para centralizar textos */
+.section-title, .about-us p {
+    text-align: center;
+}
+
+/* Estilo para alinhar a lista de navegação e links do rodapé */
+.nav__list, .footer-links {
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilo dos itens de navegação */
+.nav__item a {
+    border: 2px solid #ee6f4e;
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Estilo dos itens de navegação ao passar o mouse */
+.nav__item a:hover {
+    background-color: #ee6f4e;
+    color: #1e3d58;
+}
+
+/* Estilo dos links de redes sociais */
+.social-media__link {
+    color: white;
+    font-size: 1em;
+    margin: 0 10px;
+}
+
+/* Estilo dos links de redes sociais ao passar o mouse */
+.social-media__link:hover {
+    color: #ee6f4e;
+}
+
+/* Estilo do contêiner da imagem do banner */
+.banner-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Estilo do contêiner da imagem do banner */
+.banner-image {
+    width: 100%;
+    overflow: hidden;
+    height: 50vh;
+    box-sizing: border-box;
+}
+
+/* Estilo da imagem do banner */
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Classes utilitárias para alterar margin e padding do banner */
+
+/* Classes de margin */
+.margin-0 {
+    margin: 0;
+}
+
+.margin-10 {
+    margin: 10px;
+}
+
+.margin-20 {
+    margin: 20px;
+}
+
+.margin-30 {
+    margin: 30px;
+}
+
+.margin-40 {
+    margin: 40px;
+}
+
+.margin-50 {
+    margin: 50px;
+}
+
+/* Classes de padding */
+.padding-0 {
+    padding: 0;
+}
+
+.padding-10 {
+    padding: 10px;
+}
+
+.padding-20 {
+    padding: 20px;
+}
+
+.padding-30 {
+    padding: 30px;
+}
+
+.padding-40 {
+    padding: 40px;
+}
+
+.padding-50 {
+    padding: 50px;
+}
+@media (max-width: 768px) {
+    .feed-item, .event-item, .info-card, .banner-image {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .main-container {
+        flex-direction: column;
+    }
+
+    .feed-container {
+        padding-right: 0;
+    }
+}
+.cards-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card-list {
+    width: 48%;
+    text-align: center; /* Centraliza o texto dentro do container */
+}
+
+.card2 {
+    display: flex;
+    flex-direction: row;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card2 img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.card-content2 {
+    padding: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-title2 {
+    font-size: 1.5em;
+    margin: 0;
+    color: #333;
+}
+
+.card-description2 {
+    margin-top: 10px;
+    font-size: 1em;
+    color: #666;
+}
+
+.card-button2 {
+    margin-top: 20px;
+    padding: 10px 15px;
+    font-size: 1em;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.card-button2:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo do botão flutuante */
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 15px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #FF6F61;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+    z-index: 1000;
+    width: 10%;
+    height: 10%;
+}
+
+.floating-button:hover {
+    background-color: #dd564a;
+}
+.card-content2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-values {
+color: red;   /* Estilos para os valores */
+}
+

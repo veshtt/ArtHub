@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <link rel="icon" type="image/x-icon" href="img primeira/iccon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtHub</title>
+    <link rel="icon" type="image/x-icon" href="img primeira/iccon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Estilos para o Feed */
+        .main-container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+
+        .feed-container {
+            flex: 3;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            overflow: hidden; /* Remove a rolagem vertical */
+        }
+
+        .carousel-container {
+            text-align: center;
+        }
+
+        .carousel-title {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .owl-carousel .item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin: 0 5px;
+            text-align: center;
+            max-width: 300px; /* Limite de tamanho */
+        }
+
+        .owl-carousel .item img {
+            width: 100%;
+            height: auto;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            max-height: 200px; /* Limite de altura */
+            object-fit: cover; /* Ajusta a imagem para cobrir o contêiner */
+        }
+
+        .owl-carousel .item h3 {
+            color: #333;
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .owl-carousel .item p {
+            color: #666;
+            font-size: 1em;
+            margin: 10px;
+        }
+
+        .owl-carousel .item a {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .info-card {
+            flex: 1;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            max-height: calc(65vh - 200px); /* Ajuste a altura conforme necessário */
+        }
+
+        .info-card h2 {
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .info-card p {
+            color: #666;
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+
+        .info-card a {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        .banner-image {
+            flex: 1;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 0;
+            text-align: center;
+            max-height: calc(100vh - 200px); /* Ajuste a altura conforme necessário */
+            margin: 20px;
+            overflow: hidden; /* Para garantir que a imagem não ultrapasse os limites */
+        }
+
+        .banner-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        @media (max-width: 768px) {
+            .feed-item, .event-item, .info-card, .banner-image {
+                width: 100%;
+                margin: 10px 0;
+            }
+
+            .main-container {
+                flex-direction: column;
+            }
+
+            .feed-container {
+                padding-right: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="img primeira/LOGO2.png" alt="ArtHub Logo">
+            </a>
+        </div>
+        <nav class="nav">
+            <ul class="nav__list">
+                <li class="nav__item"><a href="index.html">Home</a></li>
+                <li class="nav__item"><a href="feed-de-publicações.html">Feed de Publicações</a></li>
+                <li class="nav__item"><a href="oportunidades.html">Oportunidades</a></li>
+                <li class="nav__item"><a href="eventos.html">Eventos</a></li>
+                <li class="nav__item"><a href="tutoriais.html">Tutoriais</a></li>
+                <li class="nav__item"><a href="contato.html">Contato</a></li>
+                <li class="nav__item"><a href="sobre-nos.html">Sobre Nós</a></li>
+            </ul>
+        </nav>
+        <div class="social-media-top">
+            <a href="#" class="social-media__link"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="social-media__link"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="social-media__link"><i class="fab fa-instagram"></i></a>
+        </div>
+        <div class="search-bar">
+            <form action="search.html" method="get">
+                <input type="text" name="q" placeholder="Buscar...">
+                <button type="submit">Pesquisar</button>
+            </form>
+        </div>
+    </header>
+
+    <!-- Banner Principal -->
+    <section class="banner">
+        <h1 class="banner__title">Bem-vindo ao ArtHub, seu portal para oportunidades no mundo da arte!</h1>
+    </section>
+
+    <!-- Main Container with Feed and Info Card -->
+    <div class="main-container">
+        <!-- Feed Container with Carousels -->
+        <div class="feed-container">
+            <!-- Carousel Container for Publicações -->
+            <div class="carousel-container">
+                <h2 class="carousel-title">Publicações</h2>
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <img src="exemplos/mirabilandia.jpg" alt="Exposição de Arte">
+                        <h3>Mirabilandia hallowen</h3>
+                        <p>Mirabilandia está em busca de uma pessoa se juntar à nossa equipe na noite mais assustadora do ano! adora Halloween? e quer fazer parte de uma celebração inesquecível, esta é a sua chance!</p>
+                        <a href="https://br.pinterest.com/habbloxx/drawing/">Ver Mais</a>
+                    </div>
+                    <div class="item">
+                        <img src="img primeira/estelita.jpg" alt="Workshop de Escultura">
+                        <h3>Vaga para DJ</h3>
+                        <p>A Casa de Show Noturno mais badalada de Recife está em busca de um DJ talentoso 🎧🎶  .</p>
+                        <a href="https://www.instagram.com/estelita.recife/">Ver Mais</a>
+                    </div>
+                    <div class="item">
+                        <img src="img primeira/Mary Cagnin.jpg" alt="Concerto de Música">
+                        <h3>Freelancer Ilustração</h3>
+                        <p>Ilustradora Mary Cagnin procura por Freelances na area da ilustração digital conheça o trabalho...
+                        </p>
+                        <a href="https://marycagnin.com">Ver Mais</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Carousel Container for Eventos e Tutoriais -->
+            <div class="carousel-container">
+                <h2 class="carousel-title">Eventos e Tutoriais</h2>
+                <div class="owl-carousel owl-theme">
+                    <div class="item">
+                        <img src="img primeira/evento 1.jpg" alt="Exposição de Arte">
+                        <h3>Exposição de Arte</h3>
+                        <p>Confira as últimas exposições de arte em nossa galeria.</p>
+                        <a href="https://conecta.recife.pe.gov.br/evento/276" class="event-card__link">Mais informações</a>
+                    </div>
+                    <div class="item">
+                        <img src="img primeira/evento 2.jpg" alt="Workshop de Escultura">
+                        <h3>Workshop de Escultura</h3>
+                        <p>Participe do nosso próximo workshop de escultura.</p>
+                        <a href="https://www.recife.pe.gov.br/" class="event-card__link">Mais informações</a>
+                    </div>
+                    <div class="item">
+                        <img src="img primeira/evento 3.jpg" alt="Concerto de Música">
+                        <h3>Concerto de Música</h3>
+                        <p>Desfrute de concertos de música ao vivo com artistas renomados.</p>
+                        <a href="https://www.recife.pe.gov.br/" class="event-card__link">Mais informações</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Info Card -->
+        <div class="info-card">
+            <h2>Oportunidades em Destaque</h2>
+            <p>Explore as oportunidades em destaque na nossa comunidade artística.
+
+            </p>
+            
+            <p>O site está em fase de demonstração, e as vagas e publicações disponíveis são apenas para ilustrar o funcionamento. Fique à vontade para explorar e experimentar. Se precisar de mais informações ou tiver alguma dúvida, estou à disposição! 🧑‍🎨<br><br>
+
+
+
+                Desfruto totalmente do site! Ele é gratuito e oferece uma experiência incrível. Se você deseja compartilhar suas ideias, histórias ou talentos, entre em contato conosco para ter sua postagem publicada no site. Mal podemos esperar para ver o que você tem a oferecer! 😊</p>
+            <a href="https://drive.google.com/file/d/1_6atGue3NbHQ8BKlPfepAFzXzI_iFaA-/view?usp=sharing">Descubra mais</a>
+            <a href="https://conecta.recife.pe.gov.br/evento/276">Eventos</a>
+        </div>
+    </div>
+
+    <!-- Imagem de Banner -->
+    <div class="banner-image">
+        <img src="img primeira/FINAL_2.png" alt="Banner">
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="index.html" class="footer-link">Home</a>
+            <a href="feed-de-publicações.html" class="footer-link">Feed de Publicações</a>
+            <a href="eventos.html" class="footer-link">Eventos</a>
+            <a href="tutoriais.html" class="footer-link">Tutoriais</a>
+            <a href="contato.html" class="footer-link">Contato</a>
+            <a href="sobre-nos.html" class="footer-link">Sobre Nós</a>
+        </div>
+        <div class="social-media">
+            <a href="#" class="social-media__link"><i class="fab fa-facebook-f"></i> Facebook</a>
+            <a href="#" class="social-media__link"><i class="fab fa-twitter"></i> Twitter</a>
+            <a href="#" class="social-media__link"><i class="fab fa-instagram"></i> Instagram</a>
+        </div>
+        <div class="contact-info">
+            <p class="contact-info__item">Email: contato@arthub.com</p>
+            <p class="contact-info__item">Telefone: (81) 1234-5678</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 2
+                    },
+                    1000: {
+                        items: 3
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

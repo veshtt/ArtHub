@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ArtHub - Tutoriais</title>
+    <link rel="icon" type="image/x-icon" href="img primeira/iccon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .banner {
+            position: relative;
+            text-align: center;
+            height: 200px; /* Reduzindo a altura do banner */
+            background: url('img primeira/design-a-logo-for-arthub-a-dynamic-social-platform-YAGPxJLkR3uRtiq1Wvw8jQ-smKJB2sbT46jzTn_3x396A.jpeg') no-repeat center center;
+            background-size: cover;
+            color: #fff;
+            margin: 0; /* Removendo qualquer margem adicional */
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Sobreposição escura */
+            z-index: 1;
+        }
+
+        .banner__title {
+            position: relative;
+            z-index: 2;
+            margin: 0; /* Removendo qualquer margem adicional */
+            line-height: 200px; /* Alinhando o texto verticalmente */
+        }
+
+        .events-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            flex: 1; /* Expande a lista de eventos para ocupar o espaço disponível */
+        }
+
+        .event-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            max-width: 300px;
+            padding: 20px;
+            text-align: center;
+            width: calc(33.333% - 20px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 200px; /* Definindo uma altura fixa para as imagens */
+            object-fit: cover; /* Ajustando a imagem para cobrir o espaço disponível */
+            border-radius: 5px;
+        }
+
+        .event-card__title {
+            color: #333;
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+
+        .event-card__date,
+        .event-card__location,
+        .event-card__description {
+            color: #666;
+            font-size: 1em;
+            margin: 5px 0;
+        }
+
+        .event-card__link {
+            background-color: #007BFF;
+            border-radius: 5px;
+            color: #fff;
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 15px;
+            text-decoration: none;
+        }
+
+        footer {
+            background-color: #1E3D58; /* Azul escuro */
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto; /* Empurra o rodapé para o final da página */
+        }
+
+        .footer-links, .social-media, .contact-info, .privacy-policy {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a, .social-media a, .privacy-policy a {
+            color: #fff;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .events-list {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .event-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+   <!-- Header -->
+   <header class="header">
+    <div class="logo">
+        <a href="index.html">
+            <img src="img primeira/LOGO2.png" alt="ArtHub Logo">
+        </a>
+    </div>
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__item"><a href="index.html">Home</a></li>
+            <li class="nav__item"><a href="feed-de-publicações.html">Feed de Publicações</a></li>
+            <li class="nav__item"><a href="oportunidades.html">Oportunidades</a></li>
+            <li class="nav__item"><a href="eventos.html">Eventos</a></li>
+            <li class="nav__item"><a href="tutoriais.html">Tutoriais</a></li>
+            <li class="nav__item"><a href="contato.html">Contato</a></li>
+            <li class="nav__item"><a href="sobre-nos.html">Sobre Nós</a></li>
+        </ul>
+    </nav>
+    <div class="social-media-top">
+        <a href="#" class="social-media__link"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="social-media__link"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="social-media__link"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="search-bar">
+        <form action="search.html" method="get">
+            <input type="text" name="q" placeholder="Buscar...">
+            <button type="submit">Pesquisar</button>
+        </form>
+    </div>
+</header>
+
+    <!-- Banner Principal -->
+    <section class="banner">
+        <h1 class="banner__title">Tutoriais</h1>
+    </section>
+
+    <!-- Espaço livre para publicações de tutoriais -->
+    <div class="publications">
+        <!-- Conteúdos futuros de tutoriais podem ser adicionados aqui -->
+    </div>
+<!-- Lista de Eventos -->
+<section class="events-list">
+    <div class="event-card">
+        <img src="img primeira/evento 1.jpg" alt="Exposição de Pintura">
+        <h2 class="event-card__title">Exposição 40 Anos em Movimento</h2>
+        <b class="event-card__date">01 JAN - 10:00h a 31 DEZ - 16:00h</b>
+        <p class="event-card__location">Local: Museu da Cidade do Recife - Forte das 5 Pontas</p>
+        <p class="event-card__description">Venha apreciar as obras dos artistas locais nessa exposição de pintura.</p>
+        <a href="https://conecta.recife.pe.gov.br/evento/276" class="event-card__link">Mais informações</a>
+    </div>
+    <div class="event-card">
+        <img src="img primeira/evento 2.jpg" alt="Workshop de Escultura">
+        <h2 class="event-card__title">Feira de Artesanato da Praça do Arsenal</h2>
+        <b class="event-card__date">08 JUN - 11:00h a 08 JUN - 20:00h</b>
+        <p class="event-card__location">Local: Praça do Arsenal</p>
+        <p class="event-card__description">Mais uma edição do Projeto Arsenal Das Artes, arte cultura e lazer.</p>
+        <a href="https://conecta.recife.pe.gov.br/evento/1815" class="event-card__link">Mais informações</a>
+    </div>
+    <div class="event-card">
+        <img src="img primeira/evento 3.jpg" alt="Concerto de Música Clássica">
+        <h2 class="event-card__title">Jogos do Orgulho do Recife 2024</h2>
+        <b class="event-card__date">08 JUN - 08:00h a 09 JUN - 20:00h</b>
+        <p class="event-card__location">Local: Geraldão - Ginásio de Esportes Geraldo Magalhães</p>
+        <p class="event-card__description">Tá chegando: Jogos do Orgulho 2024! Os Jogos vão acontecer dia 08 e 09 de junho lá no Geraldão.</p>
+        <a href="https://conecta.recife.pe.gov.br/evento/1814" class="event-card__link">Mais informações</a>
+    </div>
+    <!-- Adicione mais cards de eventos conforme necessário -->
+</section>
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="footer-links">
+        <a href="index.html" class="footer-link">Home</a>
+        <a href="feed-de-publicações.html" class="footer-link">Feed de Publicações</a>
+        <a href="eventos.html" class="footer-link">Eventos</a>
+        <a href="tutoriais.html" class="footer-link">Tutoriais</a>
+        <a href="contato.html" class="footer-link">Contato</a>
+        <a href="sobre-nos.html" class="footer-link">Sobre Nós</a>
+    </div>
+    <div class="social-media">
+        <a href="#" class="social-media__link"><i class="fab fa-facebook-f"></i> Facebook</a>
+        <a href="#" class="social-media__link"><i class="fab fa-twitter"></i> Twitter</a>
+        <a href="#" class="social-media__link"><i class="fab fa-instagram"></i> Instagram</a>
+    </div>
+    <div class="contact-info">
+        <p class="contact-info__item">Email: contato@arthub.com</p>
+        <p class="contact-info__item">Telefone: (81) 1234-5678</p>
+    </div>
+</footer>
+</body>
+</html>
